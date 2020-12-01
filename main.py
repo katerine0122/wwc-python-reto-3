@@ -1,10 +1,11 @@
 import pandas as pd
 
-
 def analizar_peliculas():
-    """
-    Escribe tu codigo aquí
-    """
+    df = pd.read_csv('movies_metadata.csv', sep=',')
+
+    result = df[(df.revenue > 2000000) & (df.budget < 1000000)][[
+        'title', 'release_date', 'budget', 'revenue', 'runtime']]
+
     return result
 
 
